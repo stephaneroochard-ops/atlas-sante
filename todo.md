@@ -70,3 +70,9 @@
 
 - [x] Enchaîner chaque lot seulement après des tests statiques, dynamiques, RTL, liens et poids verts.
 - [x] Inscrire les sorties complètes de chaque lot dans `themes/sante/RAPPORT.md` sans attendre de validation intermédiaire.
+
+## Synchronisation GitHub du thème statique
+
+- [ ] Préparer le checkpoint final pour le dépôt public.
+- [ ] Pousser la reconstruction statique vers la branche `main`.
+- [ ] Vérifier le dépôt public et communiquer le lien synchronisé.
