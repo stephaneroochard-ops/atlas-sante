@@ -51,6 +51,22 @@
 
 - [x] Créer le point de départ `themes/sante/` en HTML statique, Tailwind CLI et assets locaux.
 - [x] Restaurer un contrôle contractuel indépendant et figer son contenu avant toute implémentation.
-- [ ] Construire et vérifier les 8 pages françaises.
-- [ ] Construire et vérifier les 8 pages arabes avec `lang="ar"` et `dir="rtl"`.
-- [ ] Réaliser la conformité finale : chemins `data-field`, poids, assets, RTL et build HTML.
+- [x] Construire et vérifier les 8 pages françaises.
+- [x] Construire et vérifier les 8 pages arabes avec `lang="ar"` et `dir="rtl"`.
+- [x] Réaliser la conformité finale : chemins `data-field`, poids, assets, RTL et build HTML.
+
+## Lot 3 — Sections secondaires
+
+- [x] Ajouter les horaires, la FAQ native, le formulaire de contact et l’itinéraire dans les deux langues.
+- [x] Vérifier l’absence de JavaScript et les parcours RTL du lot 3.
+
+## Référence visuelle Denticare Everest
+
+- [x] Analyser la composition, la navigation et les onglets de la page de référence.
+- [x] Adapter l’accueil statique FR/AR avec une structure visuelle équivalente et une identité Atlas originale.
+- [x] Vérifier que les onglets et les sections ne nécessitent pas de JavaScript hors limite contractuelle.
+
+## Exécution continue
+
+- [x] Enchaîner chaque lot seulement après des tests statiques, dynamiques, RTL, liens et poids verts.
+- [x] Inscrire les sorties complètes de chaque lot dans `themes/sante/RAPPORT.md` sans attendre de validation intermédiaire.

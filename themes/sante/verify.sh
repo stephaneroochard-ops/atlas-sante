@@ -21,5 +21,17 @@ check 'La page arabe conserve un téléphone en LTR' "grep -q 'dir=\"ltr\"' '$RO
 check 'Les couleurs passent par des variables CSS' "grep -q -- '--color-primary' '$ROOT/assets/tailwind.css' && ! grep -qE '#[0-9a-fA-F]{6}' '$ROOT/index.html'"
 check 'Les polices Inter et Cairo sont importées localement' "grep -q '@fontsource/inter' '$ROOT/assets/tailwind.css' && grep -q '@fontsource/cairo' '$ROOT/assets/tailwind.css'"
 check 'Les data-field de la fondation sont présents' "grep -q 'data-field=\"business.tagline.fr\"' '$ROOT/index.html' && grep -q 'data-field=\"business.tagline.ar\"' '$ROOT/ar/index.html'"
+FR_COUNT=$(find "$ROOT" -maxdepth 1 -name '*.html' | wc -l)
+AR_COUNT=$(find "$ROOT/ar" -maxdepth 1 -name '*.html' | wc -l)
+RTL_COUNT=$(grep -l 'lang="ar" dir="rtl"' "$ROOT"/ar/*.html | wc -l)
+[ "$FR_COUNT" -eq 8 ] && ok 'Les huit pages françaises existent' || ko "Pages françaises : $FR_COUNT/8"
+[ "$AR_COUNT" -eq 8 ] && ok 'Les huit pages arabes existent' || ko "Pages arabes : $AR_COUNT/8"
+[ "$RTL_COUNT" -eq 8 ] && ok 'Chaque page arabe est marquée RTL' || ko "Pages RTL : $RTL_COUNT/8"
+check 'La FAQ utilise les éléments HTML natifs' "grep -q '<details>' '$ROOT/index.html' && grep -q '<summary' '$ROOT/index.html'"
+check 'FIELDS.md est présent' "test -f '$ROOT/FIELDS.md'"
+check 'README.md est présent' "test -f '$ROOT/README.md'"
+check 'Les images utilisent WebP avec fallback local' "grep -Rql '<picture data-field=\"brand.logo\"' '$ROOT' --include='*.html' && test -s '$ROOT/assets/img/logo.webp' && test -s '$ROOT/assets/img/logo.png'"
+MISSING=0; while IFS= read -r field; do grep -qF "$field" "$ROOT/FIELDS.md" || MISSING=$((MISSING+1)); done < <(grep -RhoE 'data-field="[^"]+"' "$ROOT" --include='*.html' | sed 's/data-field="//;s/"//' | sort -u)
+[ "$MISSING" -eq 0 ] && ok 'FIELDS.md recense tous les data-field utilisés' || ko "$MISSING data-field absent(s) de FIELDS.md"
 echo "Résultat : $PASS vérifications vertes, $FAIL erreur(s)."
 [ "$FAIL" -eq 0 ]
