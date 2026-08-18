@@ -95,3 +95,10 @@
 - [x] Recomposer l’accueil FR avec la même hiérarchie visuelle, les mêmes rythmes de modules et des contenus Atlas originaux.
 - [x] Adapter la composition à l’arabe RTL et vérifier le rendu à toutes les tailles.
 - [ ] Comparer les rendus, exécuter les contrôles et synchroniser la refonte vers GitHub.
+
+## Reprise de fidélité stricte Denticare
+
+- [x] Mesurer les hauteurs, les colonnes, les niveaux de navigation et les séparateurs de la référence.
+- [x] Refaire à l’identique de structure la topbar, le header et le hero, sans reprendre la marque ou les textes source.
+- [x] Recomposer les modules « indicateurs », « offre », « services », « équipe » et CTA selon leurs proportions de référence.
+- [x] Vérifier visuellement les versions bureau/mobile et le RTL avant toute nouvelle synchronisation.

@@ -328,3 +328,29 @@ Résultat : 23 vérifications vertes, 0 erreur(s).
 ✅ Accueil FR + CSS : 30 Ko < 100 Ko
 Résultat : 6 vérifications vertes, 0 erreur(s).
 ```
+
+---
+
+# Reprise stricte — ajustement de fidélité visuelle
+
+**Statut :** terminé et validé par contrôle statique, tests de liens et revues bureau/mobile FR/AR.
+
+Après comparaison directe avec Denticare Green Home, le hero a été repris à l’échelle de la référence : navigation à deux niveaux posée sur l’aplat turquoise, topbar utilitaire, titre en deux niveaux avec accent monumental blanc, composition graphique abstraite à droite et grande vague blanche. La page complète conserve ensuite le rythme visuel de référence : module éditorial avec trois disques, offre image/couleur, services à onglets, équipe en photos superposées, FAQ et CTA final.
+
+Les captures mobile confirment que le hero et le RTL se réorganisent sans débordement à 375 px. Les contenus, noms et images restent originaux Atlas Santé.
+
+## Sortie complète des contrôles
+
+```text
+== Atlas Santé statique · verify.sh · lot fidelity ==
+Résultat : 23 vérifications vertes, 0 erreur(s).
+
+== Atlas Santé statique · test.sh · lot fidelity ==
+✅ index.html répond 200
+✅ ar/index.html répond 200
+✅ Les 16 pages HTML répondent 200
+✅ Aucun lien interne mort
+✅ Chaque accueil a une langue et un unique h1
+✅ Accueil FR + CSS : 30 Ko < 100 Ko
+Résultat : 6 vérifications vertes, 0 erreur(s).
+```
