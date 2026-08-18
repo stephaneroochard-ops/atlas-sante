@@ -1,6 +1,6 @@
 # État final — Thème Santé Atlas
 
-**État :** thème à page unique terminé, sous réserve de l’intégration des données réelles du cabinet et de la validation éditoriale arabe.
+**État :** thème à page unique **validé et clôturé** le 18 août 2026, sous réserve de l’intégration des données réelles du cabinet et de la validation éditoriale arabe avant publication.
 
 ## Éléments terminés
 

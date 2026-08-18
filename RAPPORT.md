@@ -447,3 +447,11 @@ Le build est vert. Le template signale un champ `pnpm` historique et un bundle J
 ### Décision attendue
 
 > **Lot 5 prêt à validation.** Réponds « lot 5 validé, thème terminé » pour clôturer officiellement ce thème.
+
+---
+
+## Clôture officielle du thème
+
+Le thème Atlas Santé a été validé après ses cinq lots. La page unique responsive, les contenus français/arabe RTL, les assets originaux, les fichiers d’inventaire, la documentation et les scripts de contrôle sont maintenant figés dans le checkpoint de clôture.
+
+La prochaine intégration ne doit pas modifier le thème à l’aveugle : elle doit alimenter les chemins recensés dans `FIELDS.md` avec les informations approuvées du premier cabinet, faire relire les textes arabes par une personne arabophone et connecter le formulaire à un canal de réception explicitement validé.

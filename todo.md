@@ -30,3 +30,7 @@
 - [x] Recenser les `data-field` réels de la page unique et produire `FIELDS.md`.
 - [x] Finaliser les métadonnées, les fichiers d’information et la documentation d’usage du thème.
 - [x] Ajouter les contrôles finaux au script, exécuter les tests et documenter la clôture dans `RAPPORT.md`.
+
+## Clôture du thème
+
+- [x] Consigner la validation finale du thème et les éléments requis avant raccordement au premier cabinet.
