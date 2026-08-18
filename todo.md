@@ -76,3 +76,9 @@
 - [x] Préparer le checkpoint final pour le dépôt public.
 - [x] Pousser la reconstruction statique vers la branche `main`.
 - [x] Vérifier le dépôt public et communiquer le lien synchronisé.
+
+## Bascule de prévisualisation statique
+
+- [x] Rendre le thème `themes/sante/` accessible depuis la prévisualisation principale.
+- [x] Vérifier l’accueil français, l’accueil arabe RTL et les liens de navigation dans la prévisualisation.
+- [ ] Synchroniser la correction de prévisualisation vers GitHub.
