@@ -81,4 +81,4 @@
 
 - [x] Rendre le thème `themes/sante/` accessible depuis la prévisualisation principale.
 - [x] Vérifier l’accueil français, l’accueil arabe RTL et les liens de navigation dans la prévisualisation.
-- [ ] Synchroniser la correction de prévisualisation vers GitHub.
+- [x] Synchroniser la correction de prévisualisation vers GitHub.
