@@ -5,7 +5,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 
-printf '== Atlas Santé · test.sh · lot 4 ==\n'
+printf '== Atlas Santé · test.sh · lot 5 ==\n'
 printf '\n[1/2] Vérification TypeScript\n'
 pnpm check
 printf '\n[2/2] Build de production\n'

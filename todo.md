@@ -27,6 +27,6 @@
 
 ## Lot 5 — Conformité et documentation du thème
 
-- [ ] Produire l’inventaire exhaustif des `data-field` utilisés dans `FIELDS.md`.
-- [ ] Finaliser les métadonnées, l’accessibilité, les informations de projet et la documentation d’usage.
-- [ ] Exécuter les contrôles finaux du thème et documenter la clôture dans `RAPPORT.md`.
+- [x] Recenser les `data-field` réels de la page unique et produire `FIELDS.md`.
+- [x] Finaliser les métadonnées, les fichiers d’information et la documentation d’usage du thème.
+- [x] Ajouter les contrôles finaux au script, exécuter les tests et documenter la clôture dans `RAPPORT.md`.

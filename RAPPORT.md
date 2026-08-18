@@ -350,3 +350,100 @@ transforming (5) ../node_modules/.pnpm/wouter@3.7.1_patch_hash=4e16e6ff3fde
 ### Décision attendue
 
 > **Lot 4 prêt à validation.** Réponds « lot 4 validé, continue » pour démarrer le dernier lot de conformité et documentation.
+
+---
+
+## LOT 5 — Conformité, polices locales et documentation de clôture
+
+**Statut :** terminé, testé et en attente de validation utilisateur.  
+**Périmètre :** inventaire de données, documentation, état final, métadonnées, polices locales et contrôle final du thème.
+
+### Livraison effectuée
+
+Le thème possède désormais `FIELDS.md`, `README.md` et `ETAT-FINAL.md`. L’inventaire identifie les chemins de données intégrés à la page unique : marque, identité du cabinet, contact, services et FAQ, dans les deux langues lorsque nécessaire.
+
+Les polices Inter et Cairo sont chargées depuis les dépendances locales `@fontsource`. Les appels à Google Fonts ont été retirés. Les métadonnées de description, robots et Open Graph sont présentes ; les titres publics et dynamiques utilisent une voix patient-facing, sans vocabulaire de prototype ou de gabarit.
+
+### Sortie complète de `verify.sh`
+
+```text
+== Atlas Santé · verify.sh · lot 5 ==
+✅ Le fichier Home.tsx existe
+✅ Le header existe
+✅ Le footer existe
+✅ La feuille de styles existe
+✅ La philosophie est documentée
+✅ Le logo Atlas généré est référencé
+✅ Le hero généré est référencé
+✅ Le contenu FR/AR porte des data-fields du contrat
+✅ La marque porte un data-field
+✅ Le téléphone porte un data-field
+✅ Le sélecteur RTL est présent
+✅ La police arabe est déclarée
+✅ Le breakpoint mobile est présent
+✅ La section services est présente
+✅ La section de confiance est présente
+✅ Le formulaire de rendez-vous est présent
+✅ Le formulaire est ancré sur la page unique
+✅ Les services portent des chemins de données FR/AR
+✅ Le formulaire n’effectue aucun appel réseau
+✅ La FAQ est présente sur la page unique
+✅ La FAQ utilise les champs FR/AR du contrat
+✅ La section contact est présente sur la page unique
+✅ La ville du cabinet porte un data-field
+✅ Les horaires du cabinet portent un data-field
+✅ Le lien d’évitement clavier est présent
+✅ Le menu mobile ferme après sélection
+✅ Le formulaire expose ses retours aux lecteurs d’écran
+✅ L’inventaire FIELDS.md est présent
+✅ FIELDS.md recense les services bilingues
+✅ Le README est présent
+✅ L’état final est présent
+✅ Les polices locales Inter sont importées
+✅ Les polices locales Cairo sont importées
+✅ Aucune requête Google Fonts ne subsiste
+✅ Les métadonnées Open Graph sont présentes
+✅ Aucun langage interne ne figure dans le titre dynamique
+✅ Aucune classe CSS physique margin-left
+✅ Aucune classe CSS physique margin-right
+✅ Aucun avis ou témoignage fictif
+Résultat : 39 vérifications vertes, 0 erreur(s).
+```
+
+### Sortie complète de `test.sh`
+
+```text
+== Atlas Santé · test.sh · lot 5 ==
+[1/2] Vérification TypeScript
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+> atlas-sante@1.0.0 check /home/ubuntu/atlas-sante
+> tsc --noEmit
+
+[2/2] Build de production
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+> atlas-sante@1.0.0 build /home/ubuntu/atlas-sante
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+vite v7.1.9 building for production...
+/manus-storage/atlas-sante-hero_37339b6e.jpg referenced in /manus-storage/atlas-sante-hero_37339b6e.jpg didn't resolve at build time, it will remain unchanged to be resolved at runtime
+/manus-storage/atlas-sante-diagnostic-texture_9a4911b4.jpg referenced in /manus-storage/atlas-sante-diagnostic-texture_9a4911b4.jpg didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 1669 modules transformed.
+../dist/public/index.html                                           368.23 kB │ gzip: 105.74 kB
+../dist/public/assets/index-CtEiTtvR.css                            118.95 kB │ gzip:  21.03 kB
+../dist/public/assets/index-Dr2sNzMF.js                             599.29 kB │ gzip: 172.02 kB
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output/manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.85s
+  dist/index.js  788b
+⚡ Done in 3ms
+✅ Le typage et le build de production sont verts.
+```
+
+### Avertissements non bloquants
+
+Le build est vert. Le template signale un champ `pnpm` historique et un bundle JavaScript supérieur à 500 kB. Les polices locales ajoutent aussi les sous-ensembles nécessaires au rendu français et arabe. Ces éléments n’empêchent pas le fonctionnement du thème ; le découpage du bundle pourra être optimisé avant une montée en charge.
+
+### Décision attendue
+
+> **Lot 5 prêt à validation.** Réponds « lot 5 validé, thème terminé » pour clôturer officiellement ce thème.

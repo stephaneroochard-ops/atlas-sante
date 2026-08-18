@@ -24,8 +24,8 @@ const copy = {
     learn: "Découvrir notre approche",
     servicesLabel: "Les soins, avec simplicité",
     servicesTitle: "Les informations essentielles, à portée de main.",
-    servicesIntro: "Présentez clairement les motifs de consultation et les informations dont vos patients ont besoin avant leur visite.",
-    services: [["Consultation", "Présentez la première rencontre avec votre praticien, dans un langage simple et rassurant."], ["Prévention", "Aidez vos patients à comprendre les démarches de prévention et les bilans proposés."], ["Suivi", "Expliquez comment le cabinet accompagne chaque patient au fil de son parcours."], ["Conseils", "Réunissez les réponses utiles pour que chaque visite soit mieux préparée."]],
+    servicesIntro: "Découvrez les informations utiles pour préparer votre visite et échanger avec votre équipe de santé en toute sérénité.",
+    services: [["Votre première visite", "Préparez votre première rencontre avec le cabinet grâce à des repères simples et rassurants."], ["Prévenir", "Retrouvez les démarches de prévention et les bilans proposés par le cabinet."], ["Votre suivi", "Gardez les informations utiles pour mieux comprendre les étapes de votre suivi."], ["Questions pratiques", "Consultez des réponses simples afin d’arriver mieux préparé à votre visite."]],
     more: "En savoir plus",
     trustLabel: "Un parcours plus serein",
     trustTitle: "L’essentiel de votre cabinet, avec attention et clarté.",
@@ -44,7 +44,7 @@ const copy = {
     contactLabel: "Informations pratiques",
     contactTitle: "Préparez votre venue avec les bonnes informations.",
     contactText: "Retrouvez les coordonnées, les horaires et l’accès au cabinet en un seul endroit.",
-    contactCards: [["Téléphone", "Le numéro du cabinet", "contact.phone"], ["Email", "L’adresse de contact", "contact.email"], ["Horaires", "Les créneaux d’accueil", "contact.hours"]],
+    contactCards: [["Téléphone", "Appelez le cabinet pour préparer votre visite.", "contact.phone"], ["Email", "Écrivez au cabinet pour vos premières questions.", "contact.email"], ["Horaires", "Consultez les heures d’accueil avant votre venue.", "contact.hours"]],
     mapTitle: "Accès au cabinet", mapText: "L’adresse et l’itinéraire sont renseignés par le cabinet pour faciliter votre venue.", mapLink: "Préparer mon itinéraire",
     hints: [
       ["Votre parcours", "Les informations utiles, avec clarté."],
@@ -70,8 +70,8 @@ const copy = {
     learn: "اكتشف نهجنا",
     servicesLabel: "الرعاية ببساطة",
     servicesTitle: "المعلومات الأساسية في متناول يدك.",
-    servicesIntro: "قدّم أسباب الاستشارة والمعلومات التي يحتاج إليها مرضاك بوضوح قبل موعدهم.",
-    services: [["استشارة", "قدّم اللقاء الأول مع طبيبك بلغة بسيطة ومطمئنة."], ["وقاية", "ساعد مرضاك على فهم خطوات الوقاية والفحوصات المقترحة."], ["متابعة", "اشرح كيف ترافق العيادة كل مريض خلال مساره الصحي."], ["إرشادات", "اجمع الإجابات المفيدة ليكون كل موعد أكثر استعداداً."]],
+    servicesIntro: "اكتشف المعلومات المفيدة لتحضير زيارتك والتواصل مع فريقك الصحي بكل طمأنينة.",
+    services: [["زيارتك الأولى", "حضّر لقاءك الأول مع العيادة بفضل مؤشرات بسيطة ومطمئنة."], ["الوقاية", "اعثر على خطوات الوقاية والفحوصات التي تقترحها العيادة."], ["متابعتك", "احتفظ بالمعلومات المفيدة لفهم مراحل متابعتك بشكل أفضل."], ["أسئلة عملية", "اطّلع على إجابات بسيطة لتصل أكثر استعداداً إلى موعدك."]],
     more: "اعرف المزيد",
     trustLabel: "مسار أكثر طمأنينة",
     trustTitle: "كل ما يهم عيادتك، بعناية ووضوح.",
@@ -90,7 +90,7 @@ const copy = {
     contactLabel: "معلومات عملية",
     contactTitle: "حضّر زيارتك بالمعلومات المناسبة.",
     contactText: "اعثر على بيانات التواصل والمواعيد والوصول إلى العيادة في مكان واحد.",
-    contactCards: [["الهاتف", "رقم العيادة", "contact.phone"], ["البريد الإلكتروني", "عنوان التواصل", "contact.email"], ["المواعيد", "ساعات الاستقبال", "contact.hours"]],
+    contactCards: [["الهاتف", "اتصل بالعيادة لتحضير زيارتك.", "contact.phone"], ["البريد الإلكتروني", "راسل العيادة لطرح أسئلتك الأولى.", "contact.email"], ["المواعيد", "اطّلع على ساعات الاستقبال قبل زيارتك.", "contact.hours"]],
     mapTitle: "الوصول إلى العيادة", mapText: "تُحدّد العيادة العنوان والاتجاهات لتسهيل زيارتك.", mapLink: "حضّر مسارك",
     hints: [
       ["مسارك", "المعلومات المفيدة بوضوح."],
@@ -108,7 +108,7 @@ export default function Home() {
   useEffect(() => {
     document.documentElement.lang = isArabic ? "ar" : "fr";
     document.documentElement.dir = isArabic ? "rtl" : "ltr";
-    document.title = isArabic ? "أطلس للصحة — واجهة طبية ثنائية اللغة" : "Atlas Santé — Squelette médical bilingue";
+    document.title = isArabic ? "أطلس للصحة — رعاية واضحة، وفق إيقاعك" : "Atlas Santé — Des soins clairs, à votre rythme";
     setMenuOpen(false);
   }, [isArabic]);
 

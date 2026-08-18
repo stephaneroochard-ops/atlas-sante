@@ -22,7 +22,7 @@ check() {
 
 contains() { grep -Fq -- "$2" "$1"; }
 
-printf '== Atlas Santé · verify.sh · lot 4 ==\n'
+printf '== Atlas Santé · verify.sh · lot 5 ==\n'
 check 'Le fichier Home.tsx existe' test -f client/src/pages/Home.tsx
 check 'Le header existe' test -f client/src/components/SiteHeader.tsx
 check 'Le footer existe' test -f client/src/components/SiteFooter.tsx
@@ -50,6 +50,15 @@ check 'Les horaires du cabinet portent un data-field' contains client/src/pages/
 check 'Le lien d’évitement clavier est présent' contains client/src/pages/Home.tsx 'atlas-skip-link'
 check 'Le menu mobile ferme après sélection' contains client/src/components/SiteHeader.tsx 'menuOpen && onToggleMenu()'
 check 'Le formulaire expose ses retours aux lecteurs d’écran' contains client/src/components/AppointmentForm.tsx 'aria-live="polite"'
+check 'L’inventaire FIELDS.md est présent' test -f FIELDS.md
+check 'FIELDS.md recense les services bilingues' contains FIELDS.md 'services[].title.ar'
+check 'Le README est présent' test -f README.md
+check 'L’état final est présent' test -f ETAT-FINAL.md
+check 'Les polices locales Inter sont importées' contains client/src/index.css '@fontsource/inter/400.css'
+check 'Les polices locales Cairo sont importées' contains client/src/index.css '@fontsource/cairo/400.css'
+check 'Aucune requête Google Fonts ne subsiste' bash -c '! grep -R --include="*.html" --include="*.css" -E "fonts\\.googleapis\\.com|fonts\\.gstatic\\.com" client'
+check 'Les métadonnées Open Graph sont présentes' contains client/index.html 'property="og:title"'
+check 'Aucun langage interne ne figure dans le titre dynamique' bash -c '! grep -R --include="*.tsx" -E "Squelette médical|prototype|démo" client/src'
 check 'Aucune classe CSS physique margin-left' bash -c '! grep -R --include="*.css" -n "margin-left" client/src'
 check 'Aucune classe CSS physique margin-right' bash -c '! grep -R --include="*.css" -n "margin-right" client/src'
 check 'Aucun avis ou témoignage fictif' bash -c '! grep -R -E -i --include="*.tsx" "testimonial|témoignage|patient reviews|avis" client/src'
