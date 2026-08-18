@@ -87,4 +87,4 @@
 
 - [x] Créer un portrait du médecin, une scène d’équipe et une vue intérieure du cabinet dans l’identité Atlas.
 - [x] Compresser les visuels pour le thème statique et les intégrer avec WebP + fallback local.
-- [ ] Vérifier le rendu FR/AR, les poids et les chemins des nouveaux visuels, puis synchroniser GitHub.
+- [x] Vérifier le rendu FR/AR, les poids et les chemins des nouveaux visuels, puis synchroniser GitHub.
