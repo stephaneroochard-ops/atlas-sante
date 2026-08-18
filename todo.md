@@ -37,7 +37,7 @@
 
 ## Export GitHub
 
-- [ ] Vérifier la connexion GitHub et identifier le dépôt cible.
-- [ ] Préparer l’export du checkpoint validé du thème.
-- [ ] Obtenir la confirmation du nom, de la visibilité et de la création ou mise à jour du dépôt.
-- [ ] Exporter le projet puis communiquer le lien GitHub.
+- [x] Vérifier la connexion GitHub et identifier le dépôt cible.
+- [x] Préparer l’export du checkpoint validé du thème.
+- [x] Obtenir la confirmation du nom, de la visibilité et de la création ou mise à jour du dépôt.
+- [x] Exporter le projet puis communiquer le lien GitHub.
