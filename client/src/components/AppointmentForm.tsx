@@ -9,14 +9,14 @@ const copy = {
   fr: {
     name: "Votre nom complet", phone: "Téléphone", service: "Motif de votre visite", slot: "Créneau souhaité", message: "Un détail à nous communiquer ?", placeholder: "Décrivez brièvement votre besoin.",
     services: ["Consultation", "Suivi", "Bilan de prévention", "Autre demande"],
-    submit: "Envoyer ma demande", privacy: "Vos informations sont traitées avec discrétion par le cabinet.",
-    success: "Votre demande a bien été préparée. Le cabinet vous recontactera pour confirmer votre créneau.", required: "Veuillez renseigner les champs obligatoires.",
+    submit: "Préparer mon rendez-vous", privacy: "Vos informations servent uniquement à préparer votre demande de rendez-vous.",
+    success: "Votre demande est prête à être confirmée avec le cabinet.", required: "Veuillez renseigner les champs obligatoires.",
   },
   ar: {
     name: "الاسم الكامل", phone: "رقم الهاتف", service: "سبب الزيارة", slot: "الموعد المفضل", message: "هل هناك تفصيل تود مشاركته؟", placeholder: "صف حاجتك باختصار.",
     services: ["استشارة", "متابعة", "فحص وقائي", "طلب آخر"],
-    submit: "إرسال طلبي", privacy: "تُعالج معلوماتك بكل خصوصية من طرف العيادة.",
-    success: "تم إعداد طلبك. ستتواصل معك العيادة لتأكيد الموعد.", required: "يرجى تعبئة الحقول المطلوبة.",
+    submit: "تحضير موعدي", privacy: "تُستخدم معلوماتك فقط لتحضير طلب الموعد.",
+    success: "طلبك جاهز لتأكيده مع العيادة.", required: "يرجى تعبئة الحقول المطلوبة.",
   },
 };
 

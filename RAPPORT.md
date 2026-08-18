@@ -171,3 +171,97 @@ Le build est vert. Le template signale toujours la configuration `pnpm` historiq
 ### Décision attendue
 
 > **Lot 2 prêt à validation.** Réponds « lot 2 validé, continue » pour que je construise le lot suivant, ou indique les corrections souhaitées.
+
+---
+
+## LOT 3 — FAQ, informations pratiques et contact
+
+**Statut :** terminé, testé et en attente de validation utilisateur.  
+**Périmètre :** FAQ accessible, informations pratiques du cabinet, repère d’accès, contenu FR/AR RTL et continuité de la page unique.
+
+### Livraison effectuée
+
+Le lot 3 complète la même page d’accueil avec une FAQ bilingue en éléments HTML `details`, les informations de téléphone, e-mail, horaires et accès, ainsi qu’un module visuel d’itinéraire. Les données de contact portent les chemins du contrat (`contact.phone`, `contact.email`, `contact.hours` et `contact.address.city`) afin d’être remplacées à l’intégration par les informations du cabinet.
+
+Les réponses de FAQ demeurent strictement pratiques. Elles ne promettent ni résultat de santé, ni disponibilité, ni tarif ; aucun témoignage ou avis fictif n’a été ajouté. Les textes et les surfaces ont été ajustés pour conserver une voix patient-facing et un motif Atlas cohérent sur l’ensemble de la page.
+
+### Vérification manuelle
+
+| Vérification | Résultat |
+|---|---|
+| FAQ | Conforme : quatre questions bilingues, panneau accessible avec le comportement natif de `details`. |
+| Informations pratiques | Conforme : champs de données de contact identifiables, sans coordonnées ni horaires inventés. |
+| Design Atlas | Conforme : le symbole généré est repris avec un halo clinique comme motif de section. |
+| Rendu mobile à 375 px | Conforme : FAQ, cartes de contact et bloc d’accès restent lisibles sans débordement observé. |
+
+### Sortie complète de `verify.sh`
+
+```text
+== Atlas Santé · verify.sh · lot 3 ==
+✅ Le fichier Home.tsx existe
+✅ Le header existe
+✅ Le footer existe
+✅ La feuille de styles existe
+✅ La philosophie est documentée
+✅ Le logo Atlas généré est référencé
+✅ Le hero généré est référencé
+✅ Le contenu FR/AR porte des data-fields du contrat
+✅ La marque porte un data-field
+✅ Le téléphone porte un data-field
+✅ Le sélecteur RTL est présent
+✅ La police arabe est déclarée
+✅ Le breakpoint mobile est présent
+✅ La section services est présente
+✅ La section de confiance est présente
+✅ Le formulaire de rendez-vous est présent
+✅ Le formulaire est ancré sur la page unique
+✅ Les services portent des chemins de données FR/AR
+✅ Le formulaire n’effectue aucun appel réseau
+✅ La FAQ est présente sur la page unique
+✅ La FAQ utilise les champs FR/AR du contrat
+✅ La section contact est présente sur la page unique
+✅ La ville du cabinet porte un data-field
+✅ Les horaires du cabinet portent un data-field
+✅ Aucune classe CSS physique margin-left
+✅ Aucune classe CSS physique margin-right
+✅ Aucun avis ou témoignage fictif
+Résultat : 27 vérifications vertes, 0 erreur(s).
+```
+
+### Sortie complète de `test.sh`
+
+```text
+== Atlas Santé · test.sh · lot 3 ==
+[1/2] Vérification TypeScript
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+> atlas-sante@1.0.0 check /home/ubuntu/atlas-sante
+> tsc --noEmit
+
+[2/2] Build de production
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+> atlas-sante@1.0.0 build /home/ubuntu/atlas-sante
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+vite v7.1.9 building for production...
+/manus-storage/atlas-sante-hero_37339b6e.jpg referenced in /manus-storage/atlas-sante-hero_37339b6e.jpg didn't resolve at build time, it will remain unchanged to be resolved at runtime
+/manus-storage/atlas-sante-diagnostic-texture_9a4911b4.jpg referenced in /manus-storage/atlas-sante-diagnostic-texture_9a4911b4.jpg didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 1669 modules transformed.
+../dist/public/index.html                 368.11 kB │ gzip: 105.73 kB
+../dist/public/assets/index-B5E-cVlV.css  100.99 kB │ gzip:  18.66 kB
+../dist/public/assets/index-sLA4hvDM.js   598.52 kB │ gzip: 171.94 kB
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.83s
+  dist/index.js  788b 
+⚡ Done in 3ms
+✅ Le typage et le build de production sont verts.
+```
+
+### Avertissements non bloquants
+
+Le build reste vert. Les avertissements du template relatifs à `pnpm`, aux URL d’assets résolues à l’exécution et à la taille du bundle ne bloquent pas le fonctionnement du lot 3. Le découpage du bundle sera priorisé à l’arrivée de contenus lourds ou de routes supplémentaires.
+
+### Décision attendue
+
+> **Lot 3 prêt à validation.** Réponds « lot 3 validé, continue » pour poursuivre, ou indique les corrections souhaitées.

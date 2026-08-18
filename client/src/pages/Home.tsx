@@ -1,6 +1,6 @@
 /* Atlas Santé — Clinique de confiance: hero asymétrique bleu médical, cartes translucides et support RTL pensé dès la fondation. */
 import { useEffect, useState } from "react";
-import { ArrowRight, CalendarCheck2, CheckCircle2, ClipboardPlus, HeartPulse, ShieldCheck, Stethoscope, Languages, MapPinned, MessageCircleHeart, Sparkles, Smartphone } from "lucide-react";
+import { ArrowRight, CalendarCheck2, CheckCircle2, ClipboardPlus, HeartPulse, ShieldCheck, Stethoscope, Languages, MapPinned, MessageCircleHeart, Sparkles, Smartphone, ChevronDown, Mail, PhoneCall, Clock3, Navigation } from "lucide-react";
 import { AppointmentForm } from "@/components/AppointmentForm";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -29,13 +29,23 @@ const copy = {
     more: "En savoir plus",
     trustLabel: "Un parcours plus serein",
     trustTitle: "L’essentiel de votre cabinet, avec attention et clarté.",
-    trustText: "Le site aide vos patients à s’orienter sans surcharge d’information. Tout est présenté pour favoriser un contact simple, respectueux et lisible.",
+    trustText: "Vos patients s’orientent sans surcharge d’information. Chaque repère favorise un contact simple, respectueux et lisible avec votre équipe de santé.",
     trustBadgeTitle: "Un échange plus simple", trustBadgeText: "Les bonnes informations au bon moment.",
     trustItems: [["Depuis votre mobile", "Une consultation du site adaptée à chaque écran."], ["Dans votre langue", "Le français et l’arabe intégrés avec soin."], ["Avant votre visite", "Des repères utiles pour mieux vous préparer."], ["À votre écoute", "Un point de contact clair avec le cabinet."]],
     appointmentLabel: "Demande de rendez-vous",
     appointmentTitle: "Préparez votre visite en quelques instants.",
-    appointmentText: "Indiquez vos coordonnées, le motif de votre visite et le créneau qui vous convient. Le cabinet pourra ensuite vous recontacter pour confirmer.",
-    appointmentNote: "Une confirmation de créneau vous sera proposée par le cabinet afin de vous accueillir dans les meilleures conditions.",
+    appointmentText: "Indiquez vos coordonnées, le motif de votre visite et le créneau qui vous convient. Vous pourrez ensuite confirmer ce créneau avec le cabinet.",
+    appointmentNote: "Le créneau est confirmé avec le cabinet afin de vous accueillir dans les meilleures conditions.",
+    faqLabel: "Questions fréquentes",
+    faqTitle: "Les réponses utiles avant votre visite.",
+    faqText: "Retrouvez les premiers repères pratiques. Pour toute question particulière, le cabinet reste à votre écoute.",
+    faqLanguage: "Français · العربية, avec la même attention",
+    faq: [["Comment préparer ma première visite ?", "Rassemblez simplement les informations ou documents que vous souhaitez présenter. Le cabinet vous indiquera les éléments utiles au moment de confirmer votre rendez-vous."], ["Puis-je faire une demande de rendez-vous en ligne ?", "Oui. Indiquez votre nom, votre numéro, le motif de votre visite et le créneau souhaité. Le cabinet revient ensuite vers vous pour confirmer."], ["Puis-je échanger en français ou en arabe ?", "Le parcours de contact est disponible dans les deux langues. Choisissez celle qui vous met le plus à l’aise pour préparer votre visite."], ["Où trouver les horaires et l’itinéraire ?", "Les coordonnées et informations d’accès sont présentées ci-dessous. Elles sont renseignées par le cabinet afin que chaque patient prépare son déplacement sereinement."]],
+    contactLabel: "Informations pratiques",
+    contactTitle: "Préparez votre venue avec les bonnes informations.",
+    contactText: "Retrouvez les coordonnées, les horaires et l’accès au cabinet en un seul endroit.",
+    contactCards: [["Téléphone", "Le numéro du cabinet", "contact.phone"], ["Email", "L’adresse de contact", "contact.email"], ["Horaires", "Les créneaux d’accueil", "contact.hours"]],
+    mapTitle: "Accès au cabinet", mapText: "L’adresse et l’itinéraire sont renseignés par le cabinet pour faciliter votre venue.", mapLink: "Préparer mon itinéraire",
     hints: [
       ["Votre parcours", "Les informations utiles, avec clarté."],
       ["Préparer la consultation", "Anticipez votre visite en quelques instants."],
@@ -65,13 +75,23 @@ const copy = {
     more: "اعرف المزيد",
     trustLabel: "مسار أكثر طمأنينة",
     trustTitle: "كل ما يهم عيادتك، بعناية ووضوح.",
-    trustText: "يساعد الموقع مرضاك على التوجه من دون إفراط في المعلومات. كل شيء معروض لتشجيع تواصل بسيط ومحترم وواضح.",
+    trustText: "يتوجه مرضاك من دون إفراط في المعلومات. كل مؤشر يشجّع على تواصل بسيط ومحترم وواضح مع فريقك الصحي.",
     trustBadgeTitle: "تواصل أبسط", trustBadgeText: "المعلومة المناسبة في الوقت المناسب.",
     trustItems: [["من هاتفك", "تصفّح موقعاً مناسباً لكل شاشة."], ["بلغتك", "الفرنسية والعربية مدمجتان بعناية."], ["قبل زيارتك", "مؤشرات مفيدة للاستعداد بشكل أفضل."], ["نستمع إليك", "نقطة تواصل واضحة مع العيادة."]],
     appointmentLabel: "طلب موعد",
     appointmentTitle: "حضّر زيارتك في لحظات.",
-    appointmentText: "أدخل بياناتك وسبب زيارتك والموعد الذي يناسبك. يمكن للعيادة بعدها التواصل معك لتأكيده.",
-    appointmentNote: "ستقترح عليك العيادة تأكيداً للموعد من أجل استقبال مريح وفي أفضل الظروف.",
+    appointmentText: "أدخل بياناتك وسبب زيارتك والموعد الذي يناسبك. ويمكنك بعد ذلك تأكيد الموعد مع العيادة.",
+    appointmentNote: "يُؤكَّد الموعد مع العيادة من أجل استقبال مريح وفي أفضل الظروف.",
+    faqLabel: "أسئلة شائعة",
+    faqTitle: "الإجابات المفيدة قبل زيارتك.",
+    faqText: "اعثر على أهم الإرشادات العملية. ولأي سؤال خاص، تبقى العيادة رهن إشارتك.",
+    faqLanguage: "العربية · Français، بالعناية نفسها",
+    faq: [["كيف أستعد للزيارة الأولى؟", "اجمع ببساطة المعلومات أو الوثائق التي ترغب في تقديمها. ستخبرك العيادة بالعناصر المفيدة عند تأكيد الموعد."], ["هل يمكنني طلب موعد عبر الإنترنت؟", "نعم. اذكر اسمك ورقمك وسبب الزيارة والموعد المفضل. ثم تتواصل معك العيادة لتأكيد الموعد."], ["هل يمكنني التواصل بالفرنسية أو العربية؟", "مسار التواصل متاح باللغتين. اختر اللغة التي تمنحك أكبر قدر من الراحة قبل زيارتك."], ["أين أجد المواعيد والاتجاهات؟", "تظهر بيانات التواصل والوصول أدناه. تضعها العيادة كي يستعد كل مريض لرحلته براحة." ]],
+    contactLabel: "معلومات عملية",
+    contactTitle: "حضّر زيارتك بالمعلومات المناسبة.",
+    contactText: "اعثر على بيانات التواصل والمواعيد والوصول إلى العيادة في مكان واحد.",
+    contactCards: [["الهاتف", "رقم العيادة", "contact.phone"], ["البريد الإلكتروني", "عنوان التواصل", "contact.email"], ["المواعيد", "ساعات الاستقبال", "contact.hours"]],
+    mapTitle: "الوصول إلى العيادة", mapText: "تُحدّد العيادة العنوان والاتجاهات لتسهيل زيارتك.", mapLink: "حضّر مسارك",
     hints: [
       ["مسارك", "المعلومات المفيدة بوضوح."],
       ["حضّر استشارتك", "استعد لزيارتك في لحظات."],
@@ -176,6 +196,20 @@ export default function Home() {
           <AppointmentForm isArabic={isArabic} />
         </div>
       </section>
+      <section className="atlas-faq" id="faq">
+        <AtlasSectionMotif />
+        <div className="atlas-container atlas-faq__layout">
+          <div className="atlas-faq__intro"><span className="atlas-section-label">{t.faqLabel}</span><h2>{t.faqTitle}</h2><p>{t.faqText}</p><span className="atlas-faq__language">{t.faqLanguage}</span></div>
+          <div className="atlas-faq-list" data-section="faq">{t.faq.map(([question, answer]) => <details className="atlas-faq-item" key={question}><summary><span data-field={isArabic ? "faq[].q.ar" : "faq[].q.fr"}>{question}</span><ChevronDown size={18} aria-hidden="true" /></summary><p data-field={isArabic ? "faq[].a.ar" : "faq[].a.fr"}>{answer}</p></details>)}</div>
+        </div>
+      </section>
+      <section className="atlas-contact" id="contact">
+        <AtlasSectionMotif />
+        <div className="atlas-container"><div className="atlas-contact__head"><div><span className="atlas-section-label">{t.contactLabel}</span><h2>{t.contactTitle}</h2></div><p>{t.contactText}</p></div>
+          <div className="atlas-contact-grid"><div className="atlas-contact-cards">{t.contactCards.map(([label, text, field], index) => { const Icon = [PhoneCall, Mail, Clock3][index]; return <article className="atlas-contact-card" key={field}><span className="atlas-contact-card__icon"><Icon size={19} /></span><div><strong>{label}</strong><span data-field={field}>{text}</span></div></article>; })}</div>
+          <article className="atlas-contact-map"><div className="atlas-contact-map__content"><span className="atlas-contact-map__pin"><MapPinned size={19} /></span><div><h3 data-field="contact.address.city">{t.mapTitle}</h3><p>{t.mapText}</p></div><a className="atlas-contact-map__link" href="#rendez-vous"><Navigation size={15} />{t.mapLink}</a></div></article></div>
+        </div>
+      </section>
       <SiteFooter isArabic={isArabic} />
     </div>
   );
@@ -186,5 +220,5 @@ function GlobeIcon() {
 }
 
 function AtlasSectionMotif({ tone = "light" }: { tone?: "light" | "dark" }) {
-  return <span className={`atlas-section-motif atlas-section-motif--${tone}`} aria-hidden="true"><span className="atlas-section-motif__arc atlas-section-motif__arc--one" /><span className="atlas-section-motif__arc atlas-section-motif__arc--two" /><span className="atlas-section-motif__point" /></span>;
+  return <span className={`atlas-section-motif atlas-section-motif--${tone}`} aria-hidden="true"><img src="/manus-storage/atlas-sante-symbol_ea784670.png" alt="" /></span>;
 }
