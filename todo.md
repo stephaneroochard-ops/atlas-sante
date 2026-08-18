@@ -82,3 +82,9 @@
 - [x] Rendre le thème `themes/sante/` accessible depuis la prévisualisation principale.
 - [x] Vérifier l’accueil français, l’accueil arabe RTL et les liens de navigation dans la prévisualisation.
 - [x] Synchroniser la correction de prévisualisation vers GitHub.
+
+## Visuels médicaux originaux
+
+- [x] Créer un portrait du médecin, une scène d’équipe et une vue intérieure du cabinet dans l’identité Atlas.
+- [x] Compresser les visuels pour le thème statique et les intégrer avec WebP + fallback local.
+- [ ] Vérifier le rendu FR/AR, les poids et les chemins des nouveaux visuels, puis synchroniser GitHub.

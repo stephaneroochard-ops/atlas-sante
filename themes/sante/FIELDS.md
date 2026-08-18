@@ -14,6 +14,9 @@
 | `contact.email` | e-mail | accueil | E-mail de contact. |
 | `contact.hours` | tableau | accueil | Horaires d’accueil. |
 | `contact.phone` | téléphone | toutes | Téléphone en E.164, affiché en LTR. |
+| `media.doctorPortrait` | image | accueils FR/AR | Portrait éditorial du médecin, WebP avec fallback JPG. |
+| `media.medicalTeam` | image | accueils FR/AR | Équipe médicale, WebP avec fallback JPG. |
+| `media.clinicInterior` | image | accueils FR/AR | Intérieur du cabinet, WebP avec fallback JPG. |
 | `faq[].q.fr` / `faq[].a.fr` | texte | accueil FR | Questions et réponses françaises. |
 | `faq[].q.ar` / `faq[].a.ar` | texte | accueil AR | Questions et réponses arabes. |
 | `practitioner.name` | texte | accueil | Nom du praticien ou titre éditorial. |

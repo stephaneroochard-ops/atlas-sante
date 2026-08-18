@@ -224,3 +224,55 @@ Résultat : 6 vérifications vertes, 0 erreur(s).
 ## Réserve avant publication commerciale
 
 Les coordonnées, horaires, adresse, contenus médicaux et textes arabes doivent être remplacés ou relus par le cabinet avant une mise en ligne publique. La structure, le thème, les tests et l’inventaire de données sont prêts pour cette intégration.
+
+---
+
+# Lot médias — Médecin, équipe et cabinet
+
+**Statut :** terminé et validé automatiquement par les tests.  
+**Périmètre :** trois photographies originales, intégrées sur les accueils FR/AR avec WebP et fallback JPG local.
+
+Le portrait du médecin est intégré au hero, l’équipe médicale à la section de présentation et l’intérieur du cabinet dans le bloc de contact. Les fichiers optimisés restent autonomes dans `assets/img/` : doctor WebP/JPG (46/112 Ko), team WebP/JPG (72/168 Ko) et clinic WebP/JPG (94/183 Ko). La hiérarchie a été rendue plus clinique : titres Inter/Cairo, Bleu Atlas dominant, surfaces glacier et menthe réservée aux signaux d’action.
+
+## Sortie complète de `verify.sh --lot media`
+
+```text
+== Atlas Santé statique · verify.sh · lot media ==
+✅ Le point de départ HTML statique existe
+✅ Les partials header et footer existent
+✅ La feuille CSS compilée existe
+✅ La pile du thème ne contient que les dépendances autorisées
+✅ Aucun framework front ne figure dans le thème
+✅ Aucun asset Manus ne figure dans le thème
+✅ Aucun CDN de police ou de script ne figure dans le thème
+✅ Aucune classe RTL physique interdite ne figure dans le thème
+✅ Aucune propriété CSS physique interdite ne figure dans le thème
+✅ La page arabe porte lang=ar et dir=rtl
+✅ La page arabe conserve un téléphone en LTR
+✅ Les couleurs passent par des variables CSS
+✅ Les polices Inter et Cairo sont importées localement
+✅ Les data-field de la fondation sont présents
+✅ Les huit pages françaises existent
+✅ Les huit pages arabes existent
+✅ Chaque page arabe est marquée RTL
+✅ La FAQ utilise les éléments HTML natifs
+✅ FIELDS.md est présent
+✅ README.md est présent
+✅ Les images utilisent WebP avec fallback local
+✅ Les visuels médicaux sont locaux avec fallback
+✅ FIELDS.md recense tous les data-field utilisés
+Résultat : 23 vérifications vertes, 0 erreur(s).
+```
+
+## Sortie complète de `test.sh --lot media`
+
+```text
+== Atlas Santé statique · test.sh · lot media ==
+✅ index.html répond 200
+✅ ar/index.html répond 200
+✅ Les 16 pages HTML répondent 200
+✅ Aucun lien interne mort
+✅ Chaque accueil a une langue et un unique h1
+✅ Accueil FR + CSS : 31 Ko < 100 Ko
+Résultat : 6 vérifications vertes, 0 erreur(s).
+```

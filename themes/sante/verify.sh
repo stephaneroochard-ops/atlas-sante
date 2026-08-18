@@ -31,6 +31,7 @@ check 'La FAQ utilise les éléments HTML natifs' "grep -q '<details>' '$ROOT/in
 check 'FIELDS.md est présent' "test -f '$ROOT/FIELDS.md'"
 check 'README.md est présent' "test -f '$ROOT/README.md'"
 check 'Les images utilisent WebP avec fallback local' "grep -Rql '<picture data-field=\"brand.logo\"' '$ROOT' --include='*.html' && test -s '$ROOT/assets/img/logo.webp' && test -s '$ROOT/assets/img/logo.png'"
+check 'Les visuels médicaux sont locaux avec fallback' "grep -Rql 'media.doctorPortrait' '$ROOT' --include='*.html' && grep -Rql 'media.medicalTeam' '$ROOT' --include='*.html' && grep -Rql 'media.clinicInterior' '$ROOT' --include='*.html' && test -s '$ROOT/assets/img/doctor.webp' && test -s '$ROOT/assets/img/team.webp' && test -s '$ROOT/assets/img/clinic.webp' && test -s '$ROOT/assets/img/doctor.jpg' && test -s '$ROOT/assets/img/team.jpg' && test -s '$ROOT/assets/img/clinic.jpg'"
 MISSING=0; while IFS= read -r field; do grep -qF "$field" "$ROOT/FIELDS.md" || MISSING=$((MISSING+1)); done < <(grep -RhoE 'data-field="[^"]+"' "$ROOT" --include='*.html' | sed 's/data-field="//;s/"//' | sort -u)
 [ "$MISSING" -eq 0 ] && ok 'FIELDS.md recense tous les data-field utilisés' || ko "$MISSING data-field absent(s) de FIELDS.md"
 echo "Résultat : $PASS vérifications vertes, $FAIL erreur(s)."
