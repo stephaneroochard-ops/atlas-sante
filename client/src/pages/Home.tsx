@@ -1,6 +1,7 @@
 /* Atlas Santé — Clinique de confiance: hero asymétrique bleu médical, cartes translucides et support RTL pensé dès la fondation. */
 import { useEffect, useState } from "react";
-import { ArrowRight, CalendarCheck2, CheckCircle2, ClipboardPlus, HeartPulse, ShieldCheck, Stethoscope } from "lucide-react";
+import { ArrowRight, CalendarCheck2, CheckCircle2, ClipboardPlus, HeartPulse, ShieldCheck, Stethoscope, Languages, MapPinned, MessageCircleHeart, Sparkles, Smartphone } from "lucide-react";
+import { AppointmentForm } from "@/components/AppointmentForm";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
@@ -21,6 +22,20 @@ const copy = {
     approachText: "Chaque information trouve sa place : présenter les soins, répondre aux premières questions et faciliter le contact avec votre équipe de santé.",
     points: ["Informations essentielles faciles à trouver", "Une expérience confortable sur chaque écran", "Le français et l’arabe dans un même parcours"],
     learn: "Découvrir notre approche",
+    servicesLabel: "Les soins, avec simplicité",
+    servicesTitle: "Les informations essentielles, à portée de main.",
+    servicesIntro: "Présentez clairement les motifs de consultation et les informations dont vos patients ont besoin avant leur visite.",
+    services: [["Consultation", "Présentez la première rencontre avec votre praticien, dans un langage simple et rassurant."], ["Prévention", "Aidez vos patients à comprendre les démarches de prévention et les bilans proposés."], ["Suivi", "Expliquez comment le cabinet accompagne chaque patient au fil de son parcours."], ["Conseils", "Réunissez les réponses utiles pour que chaque visite soit mieux préparée."]],
+    more: "En savoir plus",
+    trustLabel: "Un parcours plus serein",
+    trustTitle: "L’essentiel de votre cabinet, avec attention et clarté.",
+    trustText: "Le site aide vos patients à s’orienter sans surcharge d’information. Tout est présenté pour favoriser un contact simple, respectueux et lisible.",
+    trustBadgeTitle: "Un échange plus simple", trustBadgeText: "Les bonnes informations au bon moment.",
+    trustItems: [["Depuis votre mobile", "Une consultation du site adaptée à chaque écran."], ["Dans votre langue", "Le français et l’arabe intégrés avec soin."], ["Avant votre visite", "Des repères utiles pour mieux vous préparer."], ["À votre écoute", "Un point de contact clair avec le cabinet."]],
+    appointmentLabel: "Demande de rendez-vous",
+    appointmentTitle: "Préparez votre visite en quelques instants.",
+    appointmentText: "Indiquez vos coordonnées, le motif de votre visite et le créneau qui vous convient. Le cabinet pourra ensuite vous recontacter pour confirmer.",
+    appointmentNote: "Une confirmation de créneau vous sera proposée par le cabinet afin de vous accueillir dans les meilleures conditions.",
     hints: [
       ["Votre parcours", "Les informations utiles, avec clarté."],
       ["Préparer la consultation", "Anticipez votre visite en quelques instants."],
@@ -43,6 +58,20 @@ const copy = {
     approachText: "لكل معلومة مكانها: التعرّف إلى العلاجات، الإجابة عن الأسئلة الأولى وتسهيل التواصل مع فريقك الصحي.",
     points: ["معلومات أساسية يسهل الوصول إليها", "تجربة مريحة على كل شاشة", "الفرنسية والعربية في مسار واحد"],
     learn: "اكتشف نهجنا",
+    servicesLabel: "الرعاية ببساطة",
+    servicesTitle: "المعلومات الأساسية في متناول يدك.",
+    servicesIntro: "قدّم أسباب الاستشارة والمعلومات التي يحتاج إليها مرضاك بوضوح قبل موعدهم.",
+    services: [["استشارة", "قدّم اللقاء الأول مع طبيبك بلغة بسيطة ومطمئنة."], ["وقاية", "ساعد مرضاك على فهم خطوات الوقاية والفحوصات المقترحة."], ["متابعة", "اشرح كيف ترافق العيادة كل مريض خلال مساره الصحي."], ["إرشادات", "اجمع الإجابات المفيدة ليكون كل موعد أكثر استعداداً."]],
+    more: "اعرف المزيد",
+    trustLabel: "مسار أكثر طمأنينة",
+    trustTitle: "كل ما يهم عيادتك، بعناية ووضوح.",
+    trustText: "يساعد الموقع مرضاك على التوجه من دون إفراط في المعلومات. كل شيء معروض لتشجيع تواصل بسيط ومحترم وواضح.",
+    trustBadgeTitle: "تواصل أبسط", trustBadgeText: "المعلومة المناسبة في الوقت المناسب.",
+    trustItems: [["من هاتفك", "تصفّح موقعاً مناسباً لكل شاشة."], ["بلغتك", "الفرنسية والعربية مدمجتان بعناية."], ["قبل زيارتك", "مؤشرات مفيدة للاستعداد بشكل أفضل."], ["نستمع إليك", "نقطة تواصل واضحة مع العيادة."]],
+    appointmentLabel: "طلب موعد",
+    appointmentTitle: "حضّر زيارتك في لحظات.",
+    appointmentText: "أدخل بياناتك وسبب زيارتك والموعد الذي يناسبك. يمكن للعيادة بعدها التواصل معك لتأكيده.",
+    appointmentNote: "ستقترح عليك العيادة تأكيداً للموعد من أجل استقبال مريح وفي أفضل الظروف.",
     hints: [
       ["مسارك", "المعلومات المفيدة بوضوح."],
       ["حضّر استشارتك", "استعد لزيارتك في لحظات."],
@@ -102,6 +131,7 @@ export default function Home() {
       </section>
 
       <section className="atlas-foundation" id="approche">
+        <AtlasSectionMotif />
         <div className="atlas-container atlas-foundation__grid">
           <div className="atlas-foundation__media">
             <div className="atlas-foundation__shape" />
@@ -117,6 +147,35 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="atlas-services" id="services">
+        <AtlasSectionMotif tone="dark" />
+        <div className="atlas-container">
+          <div className="atlas-services__head">
+            <div><span className="atlas-section-label" style={{ color: "#a9d0ff" }}>{t.servicesLabel}</span><h2>{t.servicesTitle}</h2></div>
+            <p className="atlas-services__intro">{t.servicesIntro}</p>
+          </div>
+          <div className="atlas-service-grid" data-repeat="services">
+            {t.services.map(([title, description], index) => {
+              const Icon = [Stethoscope, ShieldCheck, HeartPulse, MessageCircleHeart][index];
+              return <article className="atlas-service-card" key={title}><span className="atlas-service-card__icon"><Icon size={21} /></span><div><h3 data-field={isArabic ? "services[].title.ar" : "services[].title.fr"}>{title}</h3><p data-field={isArabic ? "services[].description.ar" : "services[].description.fr"}>{description}</p></div><a className="atlas-service-card__link" href="#rendez-vous">{t.more}<ArrowRight size={14} className={isArabic ? "rotate-180" : ""} /></a></article>;
+            })}
+          </div>
+        </div>
+      </section>
+      <section className="atlas-trust" id="confiance">
+        <AtlasSectionMotif />
+        <div className="atlas-container atlas-trust__layout">
+          <div className="atlas-trust__image-wrap"><img className="atlas-trust__image" src="/manus-storage/atlas-sante-care-detail_ef72a54c.jpg" alt={isArabic ? "لحظة اهتمام بين مختص ومريض" : "Un geste d’attention entre un professionnel et son patient"} /><div className="atlas-trust__glass"><strong>{t.trustBadgeTitle}</strong><span>{t.trustBadgeText}</span></div></div>
+          <div><span className="atlas-section-label">{t.trustLabel}</span><h2>{t.trustTitle}</h2><p className="atlas-trust__description">{t.trustText}</p><div className="atlas-trust-list">{t.trustItems.map(([title, text], index) => { const Icon = [Smartphone, Languages, MapPinned, Sparkles][index]; return <div className="atlas-trust-item" key={title}><Icon className="atlas-trust-item__icon" size={18} /><strong>{title}</strong><span>{text}</span></div>; })}</div></div>
+        </div>
+      </section>
+      <section className="atlas-appointment" id="rendez-vous">
+        <AtlasSectionMotif tone="dark" />
+        <div className="atlas-container atlas-appointment__layout">
+          <div className="atlas-appointment__intro"><span className="atlas-section-label" style={{ color: "#a9d0ff" }}>{t.appointmentLabel}</span><h2>{t.appointmentTitle}</h2><p>{t.appointmentText}</p><span className="atlas-appointment__bilingual"><span lang="fr">Français</span><span aria-hidden="true"> · </span><span lang="ar" dir="rtl">العربية</span></span><p className="atlas-appointment__note">{t.appointmentNote}</p></div>
+          <AppointmentForm isArabic={isArabic} />
+        </div>
+      </section>
       <SiteFooter isArabic={isArabic} />
     </div>
   );
@@ -124,4 +183,8 @@ export default function Home() {
 
 function GlobeIcon() {
   return <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>;
+}
+
+function AtlasSectionMotif({ tone = "light" }: { tone?: "light" | "dark" }) {
+  return <span className={`atlas-section-motif atlas-section-motif--${tone}`} aria-hidden="true"><span className="atlas-section-motif__arc atlas-section-motif__arc--one" /><span className="atlas-section-motif__arc atlas-section-motif__arc--two" /><span className="atlas-section-motif__point" /></span>;
 }

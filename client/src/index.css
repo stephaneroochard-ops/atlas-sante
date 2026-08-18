@@ -87,6 +87,12 @@ button { font: inherit; }
 .atlas-foundation__shape { position: absolute; inset: 20px 26px 0 0; border-radius: 28px; background: linear-gradient(135deg, #dcecff, #ecf7ff); }
 .atlas-foundation__image { position: absolute; inset: 0 0 20px 20px; height: calc(100% - 20px); width: calc(100% - 20px); border-radius: 28px; object-fit: cover; box-shadow: 0 26px 55px rgba(18,64,132,.16); }
 .atlas-foundation__content { position: relative; z-index: 1; border: 1px solid rgba(151,190,244,.45); border-radius: 22px; background: rgba(255,255,255,.7); padding: clamp(27px, 4vw, 42px); box-shadow: 0 18px 46px rgba(18,64,132,.07), inset 0 1px 0 rgba(255,255,255,.9); backdrop-filter: blur(12px); }
+.atlas-section-motif { position: absolute; z-index: 0; top: 32px; inset-inline-end: clamp(18px, 5vw, 74px); height: 68px; width: 76px; color: var(--color-primary); opacity: .12; pointer-events: none; }
+.atlas-section-motif__arc { position: absolute; bottom: 3px; height: 53px; width: 31px; border: 6px solid currentColor; border-bottom: 0; border-radius: 40px 40px 0 0; }
+.atlas-section-motif__arc--one { inset-inline-start: 7px; transform: rotate(-17deg); transform-origin: bottom center; }
+.atlas-section-motif__arc--two { inset-inline-end: 7px; transform: rotate(17deg); transform-origin: bottom center; }
+.atlas-section-motif__point { position: absolute; bottom: 17px; inset-inline-start: 50%; height: 11px; width: 11px; border-radius: 50%; background: currentColor; transform: translateX(-50%); }
+.atlas-section-motif--dark { color: #b7d8ff; opacity: .16; }
 .atlas-section-label { color: var(--color-primary); font-size: .68rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .atlas-foundation h2 { max-width: 510px; margin: 13px 0 17px; color: #172c50; font-size: clamp(1.9rem, 3.2vw, 3rem); letter-spacing: -.06em; line-height: 1.08; }
 .atlas-foundation p { max-width: 510px; color: var(--color-text-soft); font-size: .92rem; line-height: 1.85; }
@@ -95,6 +101,66 @@ button { font: inherit; }
 .atlas-points { display: grid; gap: 10px; margin: 24px 0 28px; padding: 0; list-style: none; }
 .atlas-points li { display: flex; align-items: center; gap: 10px; color: #2b4167; font-size: .82rem; font-weight: 700; }
 .atlas-points svg { color: var(--color-mint); }
+.atlas-button--blue { border-color: #1d4ed8; background: var(--color-primary); color: white; box-shadow: 0 12px 20px rgba(29,78,216,.18); }
+.atlas-button--blue:hover { background: #1a43bb; }
+.atlas-services { position: relative; overflow: hidden; padding: 92px 0 102px; background: #0c2456; color: white; }
+.atlas-services::before { content: ""; position: absolute; left: -180px; top: -270px; height: 590px; width: 590px; border-radius: 50%; background: radial-gradient(circle, rgba(87,157,255,.37) 0%, rgba(87,157,255,.08) 48%, transparent 70%); }
+.atlas-services::after { content: ""; position: absolute; right: -230px; bottom: -280px; height: 590px; width: 590px; border: 1px solid rgba(134,187,255,.13); border-radius: 50%; box-shadow: 0 0 0 42px rgba(134,187,255,.04), 0 0 0 86px rgba(134,187,255,.025); }
+.atlas-services__head { position: relative; z-index: 1; display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 38px; }
+.atlas-services__head h2 { max-width: 610px; margin: 12px 0 0; font-size: clamp(2rem, 3.55vw, 3.35rem); letter-spacing: -.065em; line-height: 1.06; }
+.atlas-services__intro { max-width: 310px; margin: 0; color: rgba(224,237,255,.7); font-size: .88rem; line-height: 1.75; }
+.atlas-service-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.atlas-service-card { min-height: 236px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(169,205,255,.23); border-radius: 18px; background: linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.06)); padding: 23px; box-shadow: inset 0 1px 0 rgba(255,255,255,.12); backdrop-filter: blur(14px); transition: transform 190ms cubic-bezier(.23,1,.32,1), border-color 190ms ease, background 190ms ease; }
+.atlas-service-card:hover { transform: translateY(-5px); border-color: rgba(188,218,255,.58); background: linear-gradient(145deg, rgba(255,255,255,.2), rgba(255,255,255,.09)); }
+.atlas-service-card__icon { display: grid; height: 42px; width: 42px; place-items: center; border: 1px solid rgba(218,236,255,.3); border-radius: 13px; background: rgba(219,238,255,.11); color: #b7d8ff; }
+.atlas-service-card h3 { margin: 20px 0 8px; color: white; font-size: 1.05rem; letter-spacing: -.035em; }
+.atlas-service-card p { margin: 0; color: rgba(224,237,255,.68); font-size: .78rem; line-height: 1.7; }
+.atlas-service-card__link { display: inline-flex; align-items: center; gap: 7px; margin-top: 19px; color: #d9eaff; font-size: .75rem; font-weight: 800; text-decoration: none; }
+.atlas-trust { position: relative; overflow: hidden; padding: 92px 0; background: linear-gradient(130deg, #edf7ff 0%, #f9fcff 52%, #eef6ff 100%); }
+.atlas-trust::before { content: ""; position: absolute; left: 49%; top: -230px; height: 500px; width: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(60,128,231,.12), transparent 68%); }
+.atlas-trust__layout { position: relative; z-index: 1; display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(42px, 7vw, 105px); }
+.atlas-trust__image-wrap { position: relative; min-height: 390px; }
+.atlas-trust__image-wrap::before { content: ""; position: absolute; inset: 36px 0 0 34px; border: 1px solid rgba(76,139,234,.4); border-radius: 24px; background: rgba(229,243,255,.7); }
+.atlas-trust__image { position: absolute; inset: 0 28px 27px 0; height: calc(100% - 27px); width: calc(100% - 28px); border-radius: 24px; object-fit: cover; box-shadow: 0 26px 56px rgba(21,77,154,.16); }
+.atlas-trust__glass { position: absolute; right: 0; bottom: 0; width: 198px; border: 1px solid rgba(141,185,242,.55); border-radius: 14px; background: rgba(255,255,255,.76); padding: 15px; box-shadow: 0 14px 33px rgba(15,64,133,.1); backdrop-filter: blur(12px); }
+.atlas-trust__glass strong { display: block; color: #1d4a92; font-size: .76rem; }
+.atlas-trust__glass span { display: block; margin-top: 3px; color: #71819b; font-size: .67rem; line-height: 1.45; }
+.atlas-trust h2 { max-width: 520px; margin: 12px 0 16px; color: #142c54; font-size: clamp(2rem, 3.3vw, 3.2rem); letter-spacing: -.065em; line-height: 1.08; }
+.atlas-trust__description { max-width: 530px; color: #667895; font-size: .91rem; line-height: 1.85; }
+.atlas-trust-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; margin-top: 26px; }
+.atlas-trust-item { display: flex; min-height: 94px; flex-direction: column; justify-content: center; border: 1px solid rgba(144,187,242,.45); border-radius: 14px; background: rgba(255,255,255,.64); padding: 15px; box-shadow: inset 0 1px 0 rgba(255,255,255,.85); }
+.atlas-trust-item__icon { color: var(--color-primary); }
+.atlas-trust-item strong { margin-top: 9px; color: #29446c; font-size: .76rem; }
+.atlas-trust-item span { margin-top: 3px; color: #7a8ca8; font-size: .66rem; line-height: 1.4; }
+.atlas-appointment { position: relative; overflow: hidden; padding: 96px 0; background: #102b64; color: white; }
+.atlas-appointment::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(6,21,53,.25), rgba(7,28,76,.08)), url("/manus-storage/atlas-sante-diagnostic-texture_9a4911b4.jpg") center/cover; opacity: .6; }
+.atlas-appointment__layout { position: relative; z-index: 1; display: grid; grid-template-columns: .83fr 1.17fr; align-items: start; gap: clamp(35px, 7vw, 96px); }
+.atlas-appointment__intro { padding-top: 18px; }
+.atlas-appointment__intro h2 { max-width: 440px; margin: 13px 0 16px; font-size: clamp(2rem, 3.3vw, 3.25rem); letter-spacing: -.065em; line-height: 1.05; }
+.atlas-appointment__intro p { max-width: 415px; color: rgba(226,239,255,.75); font-size: .9rem; line-height: 1.85; }
+.atlas-appointment__note { display: flex; align-items: center; gap: 10px; max-width: 365px; margin-top: 26px; border-inline-start: 2px solid var(--color-mint); padding-inline-start: 13px; color: rgba(224,239,255,.82); font-size: .73rem; line-height: 1.65; }
+.atlas-appointment__bilingual { display: inline-flex; align-items: center; gap: 7px; margin-top: 22px; border: 1px solid rgba(196,222,255,.3); border-radius: 99px; background: rgba(255,255,255,.08); padding: 7px 10px; color: #dbeaff; font-size: .68rem; font-weight: 800; }
+.atlas-appointment__bilingual::before { content: ""; height: 6px; width: 6px; border-radius: 50%; background: var(--color-mint); box-shadow: 0 0 0 3px rgba(84,213,174,.12); }
+.atlas-appointment-form { border: 1px solid rgba(195,220,255,.33); border-radius: 22px; background: rgba(255,255,255,.94); color: #18345f; padding: clamp(21px, 3vw, 34px); box-shadow: 0 24px 58px rgba(3,14,39,.26), inset 0 1px 0 white; backdrop-filter: blur(15px); }
+.atlas-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.atlas-form-field { display: grid; gap: 7px; }
+.atlas-form-field > span:first-child { color: #496485; font-size: .68rem; font-weight: 800; }
+.atlas-form-field b { margin-inline-start: 3px; color: #d36e74; }
+.atlas-form-field--wide { margin-top: 15px; }
+.atlas-form-input, .atlas-form-select, .atlas-form-textarea { min-height: 45px !important; border-color: #d5e3f6 !important; border-radius: 9px !important; background: #fbfdff !important; color: #173663 !important; font-size: .8rem !important; box-shadow: none !important; }
+.atlas-form-input:focus, .atlas-form-select:focus, .atlas-form-textarea:focus { border-color: #6da5f6 !important; outline: 3px solid rgba(81,147,245,.16); }
+.atlas-select-wrap { position: relative; }
+.atlas-form-select { width: 100%; appearance: none; padding: 0 38px 0 12px; }
+.atlas-select-wrap svg { position: absolute; right: 12px; top: 50%; color: #7589a6; pointer-events: none; transform: translateY(-50%); }
+[dir="rtl"] .atlas-select-wrap svg { left: 12px; right: auto; }
+[dir="rtl"] .atlas-form-select { padding: 0 12px 0 38px; }
+.atlas-form-textarea { width: 100%; resize: vertical; padding: 12px; line-height: 1.55; }
+.atlas-form-footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 20px; }
+.atlas-form-privacy { display: flex; align-items: flex-start; gap: 7px; max-width: 290px; margin: 0; color: #71839d; font-size: .64rem; line-height: 1.45; }
+.atlas-form-privacy svg { flex: 0 0 auto; color: #4c75b3; margin-top: 1px; }
+.atlas-form-message { display: flex; align-items: center; gap: 8px; margin: 15px 0 0; border-radius: 9px; padding: 10px 12px; font-size: .7rem; line-height: 1.45; }
+.atlas-form-message--error { background: #fff0f1; color: #a84650; }
+.atlas-form-message--success { background: #e7f9f2; color: #21765b; }
 .atlas-footer { background: #0a1d43; color: rgba(255,255,255,.62); }
 .atlas-footer__inner { display: flex; min-height: 88px; align-items: center; justify-content: space-between; gap: 20px; }
 .atlas-footer__text { margin: 0; font-size: .7rem; }
@@ -115,6 +181,10 @@ button { font: inherit; }
   .atlas-hero h1 { max-width: 580px; }
   .atlas-foundation__grid { grid-template-columns: 1fr; }
   .atlas-foundation__media { max-width: 600px; width: 100%; }
+  .atlas-service-grid { grid-template-columns: repeat(2, 1fr); }
+  .atlas-services__head { align-items: start; flex-direction: column; }
+  .atlas-trust__layout, .atlas-appointment__layout { grid-template-columns: 1fr; }
+  .atlas-trust__image-wrap { max-width: 600px; width: 100%; }
 }
 
 @media (max-width: 560px) {
@@ -140,6 +210,17 @@ button { font: inherit; }
   .atlas-foundation { padding: 62px 0; }
   .atlas-foundation__content { padding: 25px; }
   .atlas-foundation__media { min-height: 280px; }
+  .atlas-services, .atlas-trust, .atlas-appointment { padding: 64px 0; }
+  .atlas-service-grid { grid-template-columns: 1fr; }
+  .atlas-service-card { min-height: 190px; }
+  .atlas-trust__image-wrap { min-height: 300px; }
+  .atlas-trust__image { inset: 0 15px 17px 0; width: calc(100% - 15px); height: calc(100% - 17px); }
+  .atlas-trust__image-wrap::before { inset: 21px 0 0 19px; }
+  .atlas-trust__glass { width: 174px; padding: 12px; }
+  .atlas-trust-list { grid-template-columns: 1fr; }
+  .atlas-form-grid { grid-template-columns: 1fr; }
+  .atlas-form-footer { align-items: stretch; flex-direction: column; }
+  .atlas-form-privacy { max-width: none; }
   .atlas-footer__inner { min-height: 125px; flex-direction: column; justify-content: center; text-align: center; }
 }
 

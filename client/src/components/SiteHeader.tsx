@@ -15,7 +15,7 @@ const copy = {
     hours: "Lun. – Sam. : 9h00 – 18h00",
     name: "Atlas Santé",
     descriptor: "Votre santé, avec clarté",
-    nav: ["Accueil", "À propos", "Services", "Équipe", "Contact"],
+    nav: [["Accueil", "#accueil"], ["Notre approche", "#approche"], ["Services", "#services"], ["Vos repères", "#confiance"], ["Contact", "#rendez-vous"]],
     appointment: "Prendre rendez-vous",
   },
   ar: {
@@ -24,7 +24,7 @@ const copy = {
     hours: "الإثنين – السبت: 09:00 – 18:00",
     name: "أطلس للصحة",
     descriptor: "وضوح يرافق صحتك",
-    nav: ["الرئيسية", "من نحن", "الخدمات", "الفريق", "تواصل"],
+    nav: [["الرئيسية", "#accueil"], ["نهجنا", "#approche"], ["الخدمات", "#services"], ["دليلك", "#confiance"], ["تواصل", "#rendez-vous"]],
     appointment: "حجز موعد",
   },
 };
@@ -64,9 +64,9 @@ export function SiteHeader({ isArabic, menuOpen, onToggleLanguage, onToggleMenu 
             </span>
           </a>
           <div className={`atlas-nav__links ${menuOpen ? "atlas-nav__links--open" : ""}`}>
-            {t.nav.map((item, index) => (
-              <a key={item} className="atlas-nav__link" href={index === 0 ? "#accueil" : index === 1 ? "#approche" : "#"}>
-                {item}
+            {t.nav.map(([label, href]) => (
+              <a key={label} className="atlas-nav__link" href={href}>
+                {label}
               </a>
             ))}
           </div>
@@ -76,7 +76,7 @@ export function SiteHeader({ isArabic, menuOpen, onToggleLanguage, onToggleMenu 
           <div className="flex items-center gap-2">
             <button type="button" className="atlas-language" onClick={onToggleLanguage} aria-label={isArabic ? "Passer au français" : "التبديل إلى العربية"}>
               <Globe2 size={13} className="inline-block align-[-2px] me-1" aria-hidden="true" />
-              {isArabic ? "FR" : "AR"}
+              <span lang="fr">FR</span><span aria-hidden="true"> · </span><span lang="ar" dir="rtl">عربي</span>
             </button>
             <button type="button" className="atlas-menu-button" onClick={onToggleMenu} aria-expanded={menuOpen} aria-label={menuOpen ? (isArabic ? "إغلاق القائمة" : "Fermer le menu") : isArabic ? "فتح القائمة" : "Ouvrir le menu"}>
               {menuOpen ? <X size={23} /> : <Menu size={23} />}

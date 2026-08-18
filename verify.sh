@@ -20,9 +20,9 @@ check() {
   fi
 }
 
-contains() { grep -q -- "$2" "$1"; }
+contains() { grep -Fq -- "$2" "$1"; }
 
-printf '== Atlas Santé · verify.sh · lot 1 ==\n'
+printf '== Atlas Santé · verify.sh · lot 2 ==\n'
 check 'Le fichier Home.tsx existe' test -f client/src/pages/Home.tsx
 check 'Le header existe' test -f client/src/components/SiteHeader.tsx
 check 'Le footer existe' test -f client/src/components/SiteFooter.tsx
@@ -36,6 +36,12 @@ check 'Le téléphone porte un data-field' contains client/src/components/SiteHe
 check 'Le sélecteur RTL est présent' contains client/src/pages/Home.tsx 'document.documentElement.dir = isArabic ? "rtl" : "ltr"'
 check 'La police arabe est déclarée' contains client/src/index.css '--font-arabic'
 check 'Le breakpoint mobile est présent' contains client/src/index.css '@media (max-width: 560px)'
+check 'La section services est présente' contains client/src/pages/Home.tsx 'id="services"'
+check 'La section de confiance est présente' contains client/src/pages/Home.tsx 'id="confiance"'
+check 'Le formulaire de rendez-vous est présent' test -f client/src/components/AppointmentForm.tsx
+check 'Le formulaire est ancré sur la page unique' contains client/src/pages/Home.tsx 'id="rendez-vous"'
+check 'Les services portent des chemins de données FR/AR' contains client/src/pages/Home.tsx 'services[].title.ar'
+check 'Le formulaire n’effectue aucun appel réseau' bash -c '! grep -R -E --include="*.tsx" "fetch\\(|axios\\.|XMLHttpRequest" client/src/components/AppointmentForm.tsx'
 check 'Aucune classe CSS physique margin-left' bash -c '! grep -R --include="*.css" -n "margin-left" client/src'
 check 'Aucune classe CSS physique margin-right' bash -c '! grep -R --include="*.css" -n "margin-right" client/src'
 check 'Aucun avis ou témoignage fictif' bash -c '! grep -R -E -i --include="*.tsx" "testimonial|témoignage|patient reviews|avis" client/src'
