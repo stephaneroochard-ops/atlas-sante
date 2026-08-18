@@ -276,3 +276,55 @@ Résultat : 23 vérifications vertes, 0 erreur(s).
 ✅ Accueil FR + CSS : 31 Ko < 100 Ko
 Résultat : 6 vérifications vertes, 0 erreur(s).
 ```
+
+---
+
+# Refonte de fidélité — Denticare Green Home
+
+**Statut :** terminé et validé automatiquement par les tests.  
+**Périmètre :** recomposition structurelle de l’accueil FR/AR afin de se rapprocher de la référence fournie, sans reprendre ses contenus ni ses assets.
+
+La page suit désormais la même séquence visuelle : topbar utilitaire, header dense, grand hero turquoise ouvert avec visuel latéral, séparateur incurvé, module éditorial à indicateurs circulaires, bande d’offre bicolore, services à onglets, bloc équipe, FAQ et CTA final. La version arabe inverse naturellement cette composition pour le RTL. Les textes, le nom Atlas Santé et les photographies restent originaux.
+
+## Sortie complète de `verify.sh --lot fidelity`
+
+```text
+== Atlas Santé statique · verify.sh · lot fidelity ==
+✅ Le point de départ HTML statique existe
+✅ Les partials header et footer existent
+✅ La feuille CSS compilée existe
+✅ La pile du thème ne contient que les dépendances autorisées
+✅ Aucun framework front ne figure dans le thème
+✅ Aucun asset Manus ne figure dans le thème
+✅ Aucun CDN de police ou de script ne figure dans le thème
+✅ Aucune classe RTL physique interdite ne figure dans le thème
+✅ Aucune propriété CSS physique interdite ne figure dans le thème
+✅ La page arabe porte lang=ar et dir=rtl
+✅ La page arabe conserve un téléphone en LTR
+✅ Les couleurs passent par des variables CSS
+✅ Les polices Inter et Cairo sont importées localement
+✅ Les data-field de la fondation sont présents
+✅ Les huit pages françaises existent
+✅ Les huit pages arabes existent
+✅ Chaque page arabe est marquée RTL
+✅ La FAQ utilise les éléments HTML natifs
+✅ FIELDS.md est présent
+✅ README.md est présent
+✅ Les images utilisent WebP avec fallback local
+✅ Les visuels médicaux sont locaux avec fallback
+✅ FIELDS.md recense tous les data-field utilisés
+Résultat : 23 vérifications vertes, 0 erreur(s).
+```
+
+## Sortie complète de `test.sh --lot fidelity`
+
+```text
+== Atlas Santé statique · test.sh · lot fidelity ==
+✅ index.html répond 200
+✅ ar/index.html répond 200
+✅ Les 16 pages HTML répondent 200
+✅ Aucun lien interne mort
+✅ Chaque accueil a une langue et un unique h1
+✅ Accueil FR + CSS : 30 Ko < 100 Ko
+Résultat : 6 vérifications vertes, 0 erreur(s).
+```

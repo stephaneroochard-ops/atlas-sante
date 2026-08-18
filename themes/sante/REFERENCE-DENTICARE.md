@@ -9,3 +9,9 @@ La page combine une barre supérieure d’informations pratiques, une navigation
 La navigation propose des onglets et sous-entrées organisés par parcours : accueil, présentation, services, réalisations et actualités. Pour Atlas, ce principe deviendra une navigation à huit pages, sans dépendance JavaScript : les sous-entrées utiliseront des pages dédiées et les onglets de contenu emploieront des éléments HTML accessibles.
 
 Le rythme à conserver est : hero généreux, bloc de parcours court, section d’offre structurée en cartes, CTA clair et footer dense. L’adaptation Atlas restera bleu profond et menthe, utilisera des contenus médicaux patients et préservera toutes les contraintes HTML statique, RTL et `data-field`.
+
+## Exigences de fidélité pour la refonte
+
+La référence suit une séquence plus précise que la version Atlas actuelle : fine barre de service, en-tête horizontal dense, hero turquoise très ouvert avec une illustration graphique monumentale à droite, puis séparateur incurvé profond. Le second module est très respirant, ancré à gauche, avec grand titre à deux échelles et rangée de trois indicateurs circulaires ; il ne ressemble pas à une grille de cartes.
+
+La suite est un module d’offre à deux appels à l’action, suivi d’un bloc de services à onglets horizontaux et visuels. L’équipe et les contenus secondaires alternent de grands aplats, formes courbes, cartes-image et CTA bicolores. Pour Atlas, la reconstruction doit reproduire cette **séquence, densité et proportions** avec topbar utilitaire, navigation double niveau, hero ouvert, repères chiffrés, bande d’offre, services à onglets, grille équipe et CTA final. Les couleurs, textes, noms et photographies restent propres à Atlas Santé.

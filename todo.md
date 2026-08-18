@@ -88,3 +88,10 @@
 - [x] Créer un portrait du médecin, une scène d’équipe et une vue intérieure du cabinet dans l’identité Atlas.
 - [x] Compresser les visuels pour le thème statique et les intégrer avec WebP + fallback local.
 - [x] Vérifier le rendu FR/AR, les poids et les chemins des nouveaux visuels, puis synchroniser GitHub.
+
+## Refonte de fidélité Denticare
+
+- [x] Cartographier précisément les sections, espacements, onglets et modules du site de référence.
+- [x] Recomposer l’accueil FR avec la même hiérarchie visuelle, les mêmes rythmes de modules et des contenus Atlas originaux.
+- [x] Adapter la composition à l’arabe RTL et vérifier le rendu à toutes les tailles.
+- [ ] Comparer les rendus, exécuter les contrôles et synchroniser la refonte vers GitHub.
