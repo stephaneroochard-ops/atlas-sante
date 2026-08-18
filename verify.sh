@@ -22,7 +22,7 @@ check() {
 
 contains() { grep -Fq -- "$2" "$1"; }
 
-printf '== Atlas Santé · verify.sh · lot 3 ==\n'
+printf '== Atlas Santé · verify.sh · lot 4 ==\n'
 check 'Le fichier Home.tsx existe' test -f client/src/pages/Home.tsx
 check 'Le header existe' test -f client/src/components/SiteHeader.tsx
 check 'Le footer existe' test -f client/src/components/SiteFooter.tsx
@@ -47,6 +47,9 @@ check 'La FAQ utilise les champs FR/AR du contrat' contains client/src/pages/Hom
 check 'La section contact est présente sur la page unique' contains client/src/pages/Home.tsx 'id="contact"'
 check 'La ville du cabinet porte un data-field' contains client/src/pages/Home.tsx 'contact.address.city'
 check 'Les horaires du cabinet portent un data-field' contains client/src/pages/Home.tsx 'contact.hours'
+check 'Le lien d’évitement clavier est présent' contains client/src/pages/Home.tsx 'atlas-skip-link'
+check 'Le menu mobile ferme après sélection' contains client/src/components/SiteHeader.tsx 'menuOpen && onToggleMenu()'
+check 'Le formulaire expose ses retours aux lecteurs d’écran' contains client/src/components/AppointmentForm.tsx 'aria-live="polite"'
 check 'Aucune classe CSS physique margin-left' bash -c '! grep -R --include="*.css" -n "margin-left" client/src'
 check 'Aucune classe CSS physique margin-right' bash -c '! grep -R --include="*.css" -n "margin-right" client/src'
 check 'Aucun avis ou témoignage fictif' bash -c '! grep -R -E -i --include="*.tsx" "testimonial|témoignage|patient reviews|avis" client/src'

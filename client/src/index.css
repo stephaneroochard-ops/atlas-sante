@@ -22,6 +22,9 @@ html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; background: var(--color-background); }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; }
+.atlas-skip-link { position: fixed; z-index: 100; top: 12px; inset-inline-start: 12px; border-radius: 8px; background: white; color: #14376d; padding: 9px 13px; font-size: .76rem; font-weight: 800; text-decoration: none; transform: translateY(-150%); transition: transform 160ms ease; }
+.atlas-skip-link:focus { transform: translateY(0); outline: 3px solid rgba(84,213,174,.5); }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid rgba(118,180,255,.66); outline-offset: 3px; }
 
 .atlas-font-ar { font-family: var(--font-arabic); line-height: 1.9; }
 .atlas-shell { overflow: hidden; }

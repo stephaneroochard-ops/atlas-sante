@@ -265,3 +265,88 @@ Le build reste vert. Les avertissements du template relatifs à `pnpm`, aux URL 
 ### Décision attendue
 
 > **Lot 3 prêt à validation.** Réponds « lot 3 validé, continue » pour poursuivre, ou indique les corrections souhaitées.
+
+---
+
+## LOT 4 — Finition fonctionnelle, interactions et accessibilité
+
+**Statut :** terminé, testé et en attente de validation utilisateur.  
+**Périmètre :** fermeture du menu mobile après navigation, lien d’évitement clavier, retours du formulaire annoncés aux technologies d’assistance et revue mobile de la page unique.
+
+### Livraison effectuée
+
+Le menu mobile se ferme désormais dès qu’un lien d’ancre est choisi. Le contenu principal est accessible via un lien d’évitement visible au clavier. Le formulaire remet son état à zéro dès une nouvelle saisie et expose ses messages d’erreur ou de confirmation aux lecteurs d’écran.
+
+La page a été revue à 375 px de large après ces changements. Le menu, les CTA, les sections de service, les cartes de contact, la FAQ et le formulaire conservent un parcours lisible sans débordement observé.
+
+### Sortie complète de `verify.sh`
+
+```text
+== Atlas Santé · verify.sh · lot 4 ==
+✅ Le fichier Home.tsx existe
+✅ Le header existe
+✅ Le footer existe
+✅ La feuille de styles existe
+✅ La philosophie est documentée
+✅ Le logo Atlas généré est référencé
+✅ Le hero généré est référencé
+✅ Le contenu FR/AR porte des data-fields du contrat
+✅ La marque porte un data-field
+✅ Le téléphone porte un data-field
+✅ Le sélecteur RTL est présent
+✅ La police arabe est déclarée
+✅ Le breakpoint mobile est présent
+✅ La section services est présente
+✅ La section de confiance est présente
+✅ Le formulaire de rendez-vous est présent
+✅ Le formulaire est ancré sur la page unique
+✅ Les services portent des chemins de données FR/AR
+✅ Le formulaire n’effectue aucun appel réseau
+✅ La FAQ est présente sur la page unique
+✅ La FAQ utilise les champs FR/AR du contrat
+✅ La section contact est présente sur la page unique
+✅ La ville du cabinet porte un data-field
+✅ Les horaires du cabinet portent un data-field
+✅ Le lien d’évitement clavier est présent
+✅ Le menu mobile ferme après sélection
+✅ Le formulaire expose ses retours aux lecteurs d’écran
+✅ Aucune classe CSS physique margin-left
+✅ Aucune classe CSS physique margin-right
+✅ Aucun avis ou témoignage fictif
+Résultat : 30 vérifications vertes, 0 erreur(s).
+```
+
+### Sortie complète de `test.sh`
+
+```text
+== Atlas Santé · test.sh · lot 4 ==
+[1/2] Vérification TypeScript
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+> atlas-sante@1.0.0 check /home/ubuntu/atlas-sante
+> tsc --noEmit
+
+[2/2] Build de production
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+> atlas-sante@1.0.0 build /home/ubuntu/atlas-sante
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+vite v7.1.9 building for production...
+transforming (5) ../node_modules/.pnpm/wouter@3.7.1_patch_hash=4e16e6ff3fde
+/manus-storage/atlas-sante-hero_37339b6e.jpg referenced in /manus-storage/atlas-sante-hero_37339b6e.jpg didn't resolve at build time, it will remain unchanged to be resolved at runtime
+/manus-storage/atlas-sante-diagnostic-texture_9a4911b4.jpg referenced in /manus-storage/atlas-sante-diagnostic-texture_9a4911b4.jpg didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 1669 modules transformed.
+../dist/public/index.html                 368.11 kB │ gzip: 105.73 kB
+../dist/public/assets/index-eARj_jPd.css  101.48 kB │ gzip:  18.77 kB
+../dist/public/assets/index-CBMTFvTZ.js   598.99 kB │ gzip: 172.06 kB
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output/manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.92s
+  dist/index.js  788b 
+⚡ Done in 3ms
+✅ Le typage et le build de production sont verts.
+```
+
+### Décision attendue
+
+> **Lot 4 prêt à validation.** Réponds « lot 4 validé, continue » pour démarrer le dernier lot de conformité et documentation.

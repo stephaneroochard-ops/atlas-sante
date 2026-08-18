@@ -32,7 +32,7 @@ export function AppointmentForm({ isArabic }: AppointmentFormProps) {
   }
 
   return (
-    <form className="atlas-appointment-form" onSubmit={handleSubmit} noValidate>
+    <form className="atlas-appointment-form" onSubmit={handleSubmit} onInput={() => status !== "idle" && setStatus("idle")} noValidate aria-describedby="appointment-form-status">
       <div className="atlas-form-grid">
         <label className="atlas-form-field"><span>{t.name}<b aria-hidden="true">*</b></span><Input required name="name" placeholder={t.name} className="atlas-form-input" /></label>
         <label className="atlas-form-field"><span>{t.phone}<b aria-hidden="true">*</b></span><Input required name="phone" inputMode="tel" placeholder="+212 6 00 00 00 00" className="atlas-form-input" dir="ltr" /></label>
@@ -44,8 +44,8 @@ export function AppointmentForm({ isArabic }: AppointmentFormProps) {
         <p className="atlas-form-privacy"><LockKeyhole size={14} aria-hidden="true" />{t.privacy}</p>
         <button className="atlas-button atlas-button--blue" type="submit"><Send size={15} aria-hidden="true" />{t.submit}</button>
       </div>
-      {status === "error" && <p className="atlas-form-message atlas-form-message--error" role="alert">{t.required}</p>}
-      {status === "success" && <p className="atlas-form-message atlas-form-message--success" role="status"><CheckCircle2 size={17} aria-hidden="true" />{t.success}</p>}
+      {status === "error" && <p id="appointment-form-status" className="atlas-form-message atlas-form-message--error" role="alert">{t.required}</p>}
+      {status === "success" && <p id="appointment-form-status" className="atlas-form-message atlas-form-message--success" role="status" aria-live="polite"><CheckCircle2 size={17} aria-hidden="true" />{t.success}</p>}
     </form>
   );
 }

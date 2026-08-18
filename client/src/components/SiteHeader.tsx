@@ -65,7 +65,7 @@ export function SiteHeader({ isArabic, menuOpen, onToggleLanguage, onToggleMenu 
           </a>
           <div className={`atlas-nav__links ${menuOpen ? "atlas-nav__links--open" : ""}`}>
             {t.nav.map(([label, href]) => (
-              <a key={label} className="atlas-nav__link" href={href}>
+              <a key={label} className="atlas-nav__link" href={href} onClick={() => menuOpen && onToggleMenu()}>
                 {label}
               </a>
             ))}

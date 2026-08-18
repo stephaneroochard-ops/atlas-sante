@@ -114,9 +114,10 @@ export default function Home() {
 
   return (
     <div className={`atlas-shell ${isArabic ? "atlas-font-ar" : ""}`} dir={isArabic ? "rtl" : "ltr"}>
+      <a className="atlas-skip-link" href="#main-content">{isArabic ? "الانتقال إلى المحتوى" : "Aller au contenu"}</a>
       <section className="atlas-hero" id="accueil">
         <SiteHeader isArabic={isArabic} menuOpen={menuOpen} onToggleLanguage={() => setIsArabic((value) => !value)} onToggleMenu={() => setMenuOpen((value) => !value)} />
-        <main className="atlas-container atlas-hero__content" id="main-content">
+        <main className="atlas-container atlas-hero__content" id="main-content" tabIndex={-1}>
           <div className="atlas-hero__copy">
             <span className="atlas-eyebrow"><span className="atlas-eyebrow__dot" />{t.eyebrow}</span>
             <h1 data-field={isArabic ? "business.tagline.ar" : "business.tagline.fr"}>{t.title}</h1>
