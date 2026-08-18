@@ -41,3 +41,16 @@
 - [x] Préparer l’export du checkpoint validé du thème.
 - [x] Obtenir la confirmation du nom, de la visibilité et de la création ou mise à jour du dépôt.
 - [x] Exporter le projet puis communiquer le lien GitHub.
+
+## Analyse du contenu fourni
+
+- [ ] Lire le contenu joint et identifier ses objectifs, hypothèses et livrables.
+- [ ] Formuler un avis critique avec les améliorations prioritaires pour Atlas Santé.
+
+## Reconstruction statique — 8 pages FR / 8 pages AR
+
+- [x] Créer le point de départ `themes/sante/` en HTML statique, Tailwind CLI et assets locaux.
+- [x] Restaurer un contrôle contractuel indépendant et figer son contenu avant toute implémentation.
+- [ ] Construire et vérifier les 8 pages françaises.
+- [ ] Construire et vérifier les 8 pages arabes avec `lang="ar"` et `dir="rtl"`.
+- [ ] Réaliser la conformité finale : chemins `data-field`, poids, assets, RTL et build HTML.
