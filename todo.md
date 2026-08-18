@@ -34,3 +34,10 @@
 ## Clôture du thème
 
 - [x] Consigner la validation finale du thème et les éléments requis avant raccordement au premier cabinet.
+
+## Export GitHub
+
+- [ ] Vérifier la connexion GitHub et identifier le dépôt cible.
+- [ ] Préparer l’export du checkpoint validé du thème.
+- [ ] Obtenir la confirmation du nom, de la visibilité et de la création ou mise à jour du dépôt.
+- [ ] Exporter le projet puis communiquer le lien GitHub.
