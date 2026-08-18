@@ -73,6 +73,6 @@
 
 ## Synchronisation GitHub du thème statique
 
-- [ ] Préparer le checkpoint final pour le dépôt public.
-- [ ] Pousser la reconstruction statique vers la branche `main`.
-- [ ] Vérifier le dépôt public et communiquer le lien synchronisé.
+- [x] Préparer le checkpoint final pour le dépôt public.
+- [x] Pousser la reconstruction statique vers la branche `main`.
+- [x] Vérifier le dépôt public et communiquer le lien synchronisé.
